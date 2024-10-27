@@ -1,0 +1,88 @@
+@layer card;
+
+@layer card {
+  .card {
+    max-width: 80cqw;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 4cqi;
+
+    @media screen and (min-width: 992px) {
+      gap: 2cqi;
+    }
+  }
+
+  .card-body {
+    --_columns: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--_columns), 1fr);
+
+    margin-inline: auto;
+    margin-top: 1cqh;
+    gap: 4cqi;
+
+    @media screen and (min-width: 768px) {
+      --_columns: 2;
+    }
+
+    @media screen and (min-width: 1200px) {
+      --_columns: 3;
+      gap: 2cqi;
+    }
+
+    & a {
+      background-color: color-mix(
+        in sRGB,
+        var(--_blogCard-bgColor) var(--_opacity, 100%),
+        transparent
+      );
+      color: currentColor;
+      text-decoration: none;
+
+      > h3 {
+        margin-top: 1em;
+      }
+
+      &:hover {
+        @media (any-hover: hover) {
+          --_opacity: 80%;
+        }
+      }
+
+      &:focus-visible {
+        --_opacity: 80%;
+      }
+    }
+
+    & .link {
+      display: block;
+      max-width: 300px;
+
+      box-shadow: 0 0.1rem 1rem rgb(0 0 0 / 0.1);
+      border-radius: 1em;
+    }
+
+    & img {
+      border-radius: 1em 1em 0 0;
+    }
+
+    & picture {
+      max-width: 300px;
+      height: 200px;
+    }
+
+    & .frame {
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      margin-inline: auto;
+    }
+
+    & .description {
+      margin-bottom: 1cqh;
+    }
+  }
+}

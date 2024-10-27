@@ -1,0 +1,8 @@
+/* 以下に各フォルダのcssリンクを書いていくように*/
+/* Variable  Base それからはlayerに好きな順番で書くように */
+@import "variable/index.css";
+
+@import "base/index.css";
+
+@import "components/index.css";
+@import "layouts/index.css";

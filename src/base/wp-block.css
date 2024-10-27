@@ -1,0 +1,32 @@
+@layer wp-block;
+
+@layer wp-block {
+  h1 + div,
+  h2 + p,
+  ul + h2,
+  ul + p,
+  p + h2 {
+    margin-top: 1em;
+  }
+
+  h2 {
+    inline-size: fit-content;
+  }
+
+  p {
+    inline-size: fit-content;
+    line-height: 1.6;
+  }
+
+  .wp-block-list {
+    list-style: none;
+    margin-inline: auto;
+    margin-top: 1em;
+    inline-size: fit-content;
+    line-height: 1.5;
+
+    > li + li {
+      margin-top: 0.5rem;
+    }
+  }
+}

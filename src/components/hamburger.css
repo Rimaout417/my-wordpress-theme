@@ -1,0 +1,51 @@
+@layer hamburger;
+
+@layer hamburger {
+  :root {
+    --nav-hover-color: #ff9776;
+  }
+  .hamburger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    .menu-icon {
+      font-size: 3em; /* サイズ調整 */
+      color: currentColor; /* 色調整 */
+      transition: color 0.3s ease;
+    }
+
+    /* Hoverのスタイル */
+    @media (any-hover: hover) {
+      .menu-icon:hover {
+        color: var(--_humburger-color);
+      }
+    }
+
+    .menu-icon:focus-visible {
+      color: var(--_humburger-color);
+    }
+
+    .close {
+      display: none !important; /* 初期状態では非表示 */
+    }
+
+    /* activeクラスが付いたときのアイコンの切り替え */
+    &.active {
+      .menu {
+        display: none; /* ハンバーガーアイコンを非表示 */
+      }
+      .close {
+        display: inline-block !important; /* クローズアイコンを表示 */
+      }
+    }
+  }
+
+  /* Desktop-specific styles */
+  @media screen and (width > 768px) {
+    .hamburger {
+      display: none; /* Hide hamburger icon in desktop view */
+    }
+  }
+}

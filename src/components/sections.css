@@ -1,0 +1,17 @@
+@layer sections;
+
+@layer sections {
+  .blog {
+    & .blog-link {
+      padding: 1rem;
+      margin-inline: auto;
+      font-weight: bold;
+      border-radius: 1rem;
+
+      > a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    }
+  }
+}

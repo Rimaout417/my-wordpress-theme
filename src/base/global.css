@@ -1,0 +1,73 @@
+@layer global;
+
+@layer global {
+  :root {
+    /*Base Color */
+    --background-color: var(--gray-1);
+    --text-color: var(--gray-11);
+    --link-color: var(--blue-11);
+    --_humburger-color: var(--red-11);
+    --_humburger-BGcolor: var(--gray-2);
+
+    --_blogCard-bgColor: var(--gray-2);
+
+    --_opacity: 100%;
+
+    /* Media Screenの参考サイズとして書いているので、
+         メディアスクリーンを指定するときは使えない
+         内部で数字を指定するときは使える
+    */
+    --mobile: 375px;
+    --mobile-r: 425px;
+    --sm: 576px;
+    --md: 768px;
+    --lg: 992px;
+    --elg: 1200px;
+
+    /* Image Length */
+
+    --_img-thmnaile-blogCard: 512px;
+  }
+
+  html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+  }
+
+  body {
+    padding: 0 1rem;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 100ch;
+    line-height: 1.5;
+  }
+
+  main {
+    min-height: clamp(80vh, 85vh, 90vh);
+  }
+
+  section + section {
+    margin-top: 1cqh;
+  }
+
+  /* タグの設定 */
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+
+    > a {
+      color: #00539f;
+    }
+  }
+}

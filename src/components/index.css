@@ -1,0 +1,7 @@
+/* 以下に順番にLayerを書いていくように */
+
+@import "./header.css" layer(header);
+@import "./hamburger.css" layer(hamburger);
+@import "./sections.css" layer(sections);
+@import "./footer.css" layer(footer);
+@import "./form.css" layer(form);

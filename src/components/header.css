@@ -1,0 +1,62 @@
+@layer header;
+
+@layer header {
+  :root {
+    --header-height: 80px;
+  }
+
+  header {
+    height: var(--header-height);
+    margin-inline: auto;
+
+    /* Header container */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height); /* Ensure the height is fixed */
+
+      &.active {
+        /* ハンバーガーメニューの設定 */
+        ul {
+          display: flex; /* 縦型リストとして表示 */
+          position: absolute;
+          flex-direction: column;
+          align-items: center;
+          top: calc(
+            var(--header-height) * 1.5
+          ); /* ヘッダーの高さを基準に表示 */
+          left: 0;
+          right: 0;
+          background-color: var(--_humburger-BGcolor);
+          z-index: 1000;
+
+          padding: 1rem;
+          margin-inline: auto;
+        }
+      }
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      place-content: center;
+      gap: 1rem;
+
+      @media screen and (width <= 768px) {
+        display: none;
+      }
+
+      > li {
+        @media screen and (width > 425px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      color: var(--link-color);
+    }
+  }
+}

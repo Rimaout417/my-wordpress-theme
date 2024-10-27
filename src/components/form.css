@@ -1,0 +1,29 @@
+@layer form;
+
+@layer form {
+  p + p {
+    margin-top: 1rem;
+  }
+  & input {
+    max-width: 90vw;
+    background: var(--gray-3);
+  }
+
+  & textarea {
+    --cols: 30rem;
+    --min-rows: 5lh;
+    --max-rows: 20lh;
+    --padding: 1em;
+
+    max-width: 90vw;
+    background: var(--gray-3);
+
+    box-sizing: border-box;
+    inline-size: min(100%, var(--cols));
+    min-block-size: calc(var(--min-rows) + var(--padding) * 2);
+    max-block-size: calc(var(--max-rows) + var(--padding) * 2);
+    font-size: 1rem;
+
+    resize: block;
+  }
+}
